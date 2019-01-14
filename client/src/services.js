@@ -56,3 +56,7 @@ export function deleteSubscription(usermail: string){
 export function addSubscription(json: Object){
     return axios.post('/addSubscription', json);
 }
+
+export function getCompanyIssue(usermail: string): Promise<Issue[]>{
+    return axios.get('/getCompanyIssue/'+ usermail);
+}
