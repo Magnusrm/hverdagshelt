@@ -32,8 +32,8 @@
     "react-simplified": "^1.5.2",
     "reactstrap": "^7.0.2",
     "redux": "^4.0.1",
-    "redux-form": "^8.1.0"
-    "react-simplified": "^1.5.2"
+    "redux-form": "^8.1.0",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

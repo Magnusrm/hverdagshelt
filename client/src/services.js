@@ -39,4 +39,31 @@ export function addSubscription(json: Object){
     return axios.post('/addSubscription', json);
 }
 
+export class CategoryService {
+
+    getCategory1(): Promise<Category[]>{
+        return axios.get('/get_category1');
+    }
+
+    getCategory2(): Promise<Category2[]>{
+        return axios.get('/get_category2');
+    }
+
+    getCategory3(): Promise<Category3[]>{
+        return axios.get('/get_category3');
+    }
+
+    addCategory1(json:Object){
+        return axios.post('/add_category1',json);
+    }
+
+    addCategory2(json:Object){
+        return axios.post('/add_category2',json);
+    }
+
+    addCategory3(json:Object){
+        return axios.post('/add_category3',json);
+    }
+}
+
 

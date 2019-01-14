@@ -97,25 +97,49 @@ export class Company extends Type {
     this.description = description;
   }
 }
-
 export class Category {
-  categoryId: number;
-  name: string;
-  priority: number;
-  active: number;
+    categoryId: number;
+    name: string;
+    priority: number;
+    active: number;
 
-  constructor(
-    categoryId: number,
-    name: string,
-    priority: number,
-    active: number
-  ) {
-    this.categoryId = categoryId;
-    this.name = name;
-    this.priority = priority;
-    this.active = active;
-  }
+    constructor(
+        categoryId: number,
+        name: string,
+        priority: number,
+        active: number
+    ) {
+        this.categoryId = categoryId;
+        this.name = name;
+        this.priority = priority;
+        this.active = active;
+    }
 }
+
+export class Category2 extends Category {
+    category2Id: number;
+
+    constructor(categoryId: number, category2Id: number, name: string, priority: number, active: number) {
+
+        // noinspection JSAnnotator
+        this.category2Id = categoryId;
+
+        super(category2Id, name, priority, active);
+    }
+}
+
+export class Category3 extends Category {
+    category2Id: number;
+
+    constructor(categoryId2: number, categoryId3: number, name: string, priority: number, active: number) {
+
+        // noinspection JSAnnotator
+        this.category2Id = categoryId2;
+
+        super(categoryId3, name, priority, active);
+    }
+}
+
 
 export class Event {
   eventId: number;
