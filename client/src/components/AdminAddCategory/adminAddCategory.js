@@ -17,15 +17,6 @@ interface State {
 
 interface Props{}
 
-//Lag et skrivefelt der man kan skrive inn en ny kategori
-// Velg plass kattegoriebn skal være i
-// Knapp plasser katteori her
-//Sette en kategorikomponent inn i siden
-//Finn måte å hente dataene som kommer når man trykker på kategoriene
-//Sjekke at den ikke er lik noen andre kategorier
-
-//Spørsmål hvordan vet man hvilken kategori den har tatt
-//Hva er det som skal stå på prioritet kan admin velge det? og hva er skalaen
 //Prioritet 1,2,3
 
 export class adminAddCategory extends Component<Props,State> {
@@ -64,9 +55,7 @@ export class adminAddCategory extends Component<Props,State> {
     };
 
     handlePriority=(pri: number)=> {
-        console.log(this.state.newPriority);
       this.setState({ newPriority : pri})
-        console.log(this.state.newPriority);
     };
 
     saveCategory=()=>{
