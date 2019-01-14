@@ -1,13 +1,11 @@
 import {Component} from "react-simplified"
-import {Layout} from './widgets';
-import {Card, Col, Row, Button, Form, FormGroup, Label, Input, FormText , Table, Media, CardText} from 'reactstrap';
+import React from "react"
+//import {Layout} from './widgets';
+import { Col, Row, Button, Form, FormGroup, Label, FormText , Table, Media, CardText} from 'react-bootstrap';
 
-class RegisterUser extends Component{
+export class RegisterUser extends Component{
 
     user = {};
-
-
-
 
     render(){
         return(

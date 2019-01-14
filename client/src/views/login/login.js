@@ -1,5 +1,4 @@
 // @flow
-
 import ReactDOM from 'react-dom';
 import * as React from 'react';
 import { Component } from 'react';
@@ -7,6 +6,12 @@ import {User} from "../../classTypes";
 import {Grid, Row, Col} from 'react-bootstrap';
 import {UserService} from "../../services";
 import {Alert} from "../../widgets";
+import MenuItem from "react-bootstrap/es/MenuItem";
+import Dropdown from "react-bootstrap/es/Dropdown";
+import FormControl from "react-bootstrap/es/FormControl";
+import DropdownButton from "react-bootstrap/es/DropdownButton";
+import Button from "react-bootstrap/es/Button";
+import {CustomMenu, CustomToggle} from "../../components/DropdownWSearch";
 let jwt = require("jsonwebtoken");
 
 
@@ -27,6 +32,8 @@ export class Login extends Component<Props,State>{
         password: '',
         storedPassword: '',
     };
+
+
 
     handleChangeEmail = (event: SyntheticEvent<HTMLButtonElement>) => {
         this.setState({
@@ -78,7 +85,20 @@ export class Login extends Component<Props,State>{
                                     Sjekk
                                 </button>
                             </Col>
-                            <Col> </Col>
+
+
+                            <Col>
+                                <Dropdown id="dropdown-custom-menu">
+                                    <CustomToggle bsRole={"toggle"}/>
+
+                                    <CustomMenu bsRole="menu">
+                                        <MenuItem eventKey="1">Red</MenuItem>
+                                        <MenuItem eventKey="2">Blue</MenuItem>
+                                        <MenuItem eventKey="3" active>Orange</MenuItem>
+                                        <MenuItem eventKey="1">Red-Orange</MenuItem>
+                                    </CustomMenu>
+                                </Dropdown>
+                            </Col>
                         </Row>
                     </form>
                 </div>
@@ -117,3 +137,4 @@ export class Login extends Component<Props,State>{
     }
 
 }//end class
+
