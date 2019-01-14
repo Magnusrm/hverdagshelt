@@ -63,12 +63,18 @@ export class adminAddCategory extends Component<Props,State> {
         })
     };
 
+    handlePriority=(pri: number)=> {
+        console.log(this.state.newPriority);
+      this.setState({ newPriority : pri})
+        console.log(this.state.newPriority);
+    };
+
     saveCategory=()=>{
 
         if(this.state.newCategoryName != '' && this.state.selectedCategoryType == 0) {
             let theBody1: Object = {
                 name: this.state.newCategoryName,
-                priority: 1,
+                priority: this.state.newPriority,
             };
         categoryService.addCategory1(theBody1);
         }
@@ -105,9 +111,9 @@ export class adminAddCategory extends Component<Props,State> {
                         <ListGroupItem onClick={()=> this.onClickHovedkategori()}>Registrer som hovedkategori</ListGroupItem>
                     </ListGroup>
                     <ControlLabel >Prioritet: </ControlLabel>
-                    <Button>1-Meget-Viktig</Button>
-                    <Button>2-Viktig</Button>
-                    <Button>3-Lite-Viktig</Button>
+                    <Button onClick={()=>this.handlePriority(1)}>1-Meget-Viktig</Button>
+                    <Button onClick={()=>this.handlePriority(2)}>2-Viktig</Button>
+                    <Button onClick={()=>this.handlePriority(3)}>3-Lite-Viktig</Button>
 
 
                     <ChooseCategory changeCategoryHeader={this.onChangeCategoryHeader.bind(this) } registerCategory={true}/>
