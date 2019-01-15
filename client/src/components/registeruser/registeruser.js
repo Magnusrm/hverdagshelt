@@ -139,8 +139,6 @@ export class RegisterUser extends Component<Props, State>{
         this.setState({
             choosen: JSON.parse(e.target.value)
         })
-
-
     };
 
     componentWillMount() {
